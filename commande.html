@@ -1,0 +1,64 @@
+<!-- =========================
+     PAGE : commande.html (formulaire multiple + JS dynamique externe)
+========================= -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passer une commande - Boulangerie Artisanale</title>
+  <link rel="stylesheet" href="script.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+  <header>
+    <h1>Passer une commande</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="produits.html">Nos Produits</a>
+      <a href="about.html">À propos</a>
+      <a href="contact.html">Contact</a>
+      <a href="commande.html">Commande</a>
+    </nav>
+  </header>
+
+  <main class="container order-form">
+    <section>
+      <h2>Réservez vos produits</h2>
+      <form id="order-form">
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Adresse email :</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Téléphone :</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="date">Date de retrait :</label>
+        <input type="date" id="date" name="date" required>
+        <input type="time" id="heure" required>
+
+        <div id="product-list">
+          <!-- produits générés dynamiquement -->
+        </div>
+
+        <div class="recap">
+          <h3>Récapitulatif de la commande</h3>
+          <ul id="recap-list"></ul>
+          <div class="total">Total : <span id="total-price">0,00 €</span></div>
+        </div>
+
+        <button type="submit" id="valider-commande">Valider la commande</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Boulangerie Artisanale. Tous droits réservés.</p>
+  </footer>
+
+  <script src="js/commande.js"></script>
+</body>
+</html>

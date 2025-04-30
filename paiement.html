@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paiement - Boulangerie Artisanale</title>
+  <link rel="stylesheet" href="script.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Paiement de votre commande</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="produits.html">Nos Produits</a>
+      <a href="about.html">À propos</a>
+      <a href="contact.html">Contact</a>
+      <a href="commande.html">Commande</a>
+    </nav>
+  </header>
+
+  <main class="container paiement-container">
+    <div class="recap">
+      <h3>Récapitulatif de la commande</h3>
+      <ul id="recap-liste"></ul>
+      <p class="total"><strong>Total :</strong> <span id="recap-total">0 €</span></p>
+    </div>
+
+    <div class="payment-form">
+      <h2>Finalisez votre commande</h2>
+      <form action="confirmation.html" method="post">
+        <!-- Menu déroulant pour type de carte -->
+        <label for="card-type">Type de carte :</label>
+        <div class="custom-select">
+          <input type="hidden" name="card-type" id="card-type" value="">
+          <div class="select-selected">Choisir un type</div>
+          <div class="select-items select-hide">
+            <div data-value="visa">
+              <img src="images/Visa_Logo.png" alt="Visa"> Visa
+            </div>
+            <div data-value="mastercard">
+              <img src="images/Mastercard-logo.png" alt="Mastercard"> Mastercard
+            </div>
+            <div data-value="amex">
+              <img src="images/american.jpeg" alt="Amex"> American Express
+            </div>
+          </div>
+        </div>
+
+        <label for="card-name">Nom sur la carte :</label>
+        <input type="text" id="card-name" name="card-name" required>
+
+        <label for="card-number">Numéro de carte :</label>
+        <input type="text" id="card-number" name="card-number" maxlength="19" placeholder="1234 5678 9012 3456" required>
+
+        <label for="expiry">Date d'expiration :</label>
+        <input type="month" id="expiry" name="expiry" required>
+
+        <label for="cvv">Code de sécurité (CVV) :</label>
+        <input type="text" id="cvv" name="cvv" maxlength="4" required>
+
+        <button type="submit">Payer maintenant</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Boulangerie Artisanale. Tous droits réservés.</p>
+  </footer>
+
+  <script src="js/paiement.js"></script>
+</body>
+</html>
